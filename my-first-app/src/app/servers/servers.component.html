@@ -3,5 +3,16 @@ button
 <p>{{allowNewServer}}</p> <!-- when you want to just print out use string introplation -->
 <p [innerText]="!allowNewServer"></p> <!-- if you want to update an html element or directive use property binding -->
 <hr>
+<!-- event binding -->
+<button class= "btn btn-primary" (click)="onCreateServer()">Create Servers</button>
+<p>{{serverCreationStatus}}</p>
+<hr>
+<!-- passing data with event binding -->
+<label>Server Name</label>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
 <app-server></app-server>
 <app-server></app-server>
