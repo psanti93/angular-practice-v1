@@ -1,5 +1,5 @@
 button
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Servers</button> <!-- [] is property binding binding to allowNewServer boolean field in servers components -->
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Servers</button> <!-- disabled is a native html property [] the button will be no longer disabled after two seconds since disabled will be not true (!allowServers) is property binding binding to allowNewServer boolean field in servers components -->
 <p>{{allowNewServer}}</p> <!-- when you want to just print out use string introplation -->
 <p [innerText]="!allowNewServer"></p> <!-- if you want to update an html element or directive use property binding -->
 <hr>
