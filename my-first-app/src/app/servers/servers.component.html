@@ -1,4 +1,7 @@
-
-app-server
+button
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Servers</button> <!-- [] is property binding binding to allowNewServer boolean field in servers components -->
+<p>{{allowNewServer}}</p> <!-- when you want to just print out use string introplation -->
+<p [innerText]="!allowNewServer"></p> <!-- if you want to update an html element or directive use property binding -->
+<hr>
 <app-server></app-server>
 <app-server></app-server>
