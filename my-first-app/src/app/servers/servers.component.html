@@ -3,16 +3,13 @@ button
 <p>{{allowNewServer}}</p> <!-- when you want to just print out use string introplation -->
 <p [innerText]="!allowNewServer"></p> <!-- if you want to update an html element or directive use property binding -->
 <hr>
-<!-- event binding -->
-<button class= "btn btn-primary" (click)="onCreateServer()">Create Servers</button>
-<p>{{serverCreationStatus}}</p>
-<hr>
-<!-- passing data with event binding -->
-<label>Server Name</label>
+<!-- two way binding -->
 <input
-  type="text"
-  class="form-control"
-  (input)="onUpdateServerName($event)">
-<p>{{serverName}}</p>
+ type="text"
+ class="form-control"
+ [(ngModel)]="serverName"/>
+ <p>{{serverName}}</p>
+<hr>
+
 <app-server></app-server>
 <app-server></app-server>
