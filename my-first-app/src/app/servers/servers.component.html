@@ -1,15 +1,19 @@
-button
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Servers</button> <!-- disabled is a native html property [] the button will be no longer disabled after two seconds since disabled will be not true (!allowServers) is property binding binding to allowNewServer boolean field in servers components -->
-<p>{{allowNewServer}}</p> <!-- when you want to just print out use string introplation -->
-<p [innerText]="!allowNewServer"></p> <!-- if you want to update an html element or directive use property binding -->
+<h1> Putting it all together!</h1>
 <hr>
-<!-- two way binding -->
+<!-- two way binding on the input, property binding with disabled (un disabled after set to not true),
+event binding with clicking, and string interpolation -->
 <input
  type="text"
  class="form-control"
  [(ngModel)]="serverName"/>
- <p>{{serverName}}</p>
+ <button class = "btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
+ <p>{{serverCreationStatus}}</p>
 <hr>
+<input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"/>
+<p>{{someMessage}}</p>
 
 <app-server></app-server>
 <app-server></app-server>
