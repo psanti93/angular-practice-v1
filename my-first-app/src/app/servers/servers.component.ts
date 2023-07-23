@@ -11,6 +11,7 @@ export class ServersComponent {
   serverName = "Test Server" //two way binding
   someMessage = "TYPE HERE" // one way binding
   serverCreated = false
+  servers = ['Testserver', 'Testserver 2']
   constructor() {
     // property binding example
     setTimeout(()=>{
@@ -23,6 +24,7 @@ export class ServersComponent {
   onCreateServer() {
     this.serverCreated = true
     this.serverCreationStatus = 'Server was created! server name is ' + this.serverName;
+    this.servers.push(this.serverName)
   }
 
   // Event Binding - one way
