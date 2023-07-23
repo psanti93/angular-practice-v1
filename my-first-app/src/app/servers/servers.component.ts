@@ -10,6 +10,8 @@ export class ServersComponent {
   serverCreationStatus = 'No server was created'; //string interpolation
   serverName = "Test Server" //two way binding
   someMessage = "TYPE HERE" // one way binding
+  serverCreated = false
+  servers = ['Testserver', 'Testserver 2']
   constructor() {
     // property binding example
     setTimeout(()=>{
@@ -20,7 +22,9 @@ export class ServersComponent {
 
   // Event binding
   onCreateServer() {
+    this.serverCreated = true
     this.serverCreationStatus = 'Server was created! server name is ' + this.serverName;
+    this.servers.push(this.serverName) // will populate another <app-server></app-server> property
   }
 
   // Event Binding - one way

@@ -7,7 +7,11 @@ event binding with clicking, and string interpolation -->
  class="form-control"
  [(ngModel)]="serverName"/>
  <button class = "btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
- <p>{{serverCreationStatus}}</p>
+ <!-- <p>{{serverCreationStatus}}</p> -->
+ <!-- NG IF directive example keeps <p> hidden-->
+ <p *ngIf="serverCreated; else noServer">{{serverCreationStatus}}</p> <!-- example of an else condition using local reference -->
+ <ng-template #noServer><p>No server was created!</p></ng-template> <!-- #noServer is a local reference -->
+
 <hr>
 <input
 type="text"
@@ -15,5 +19,5 @@ class="form-control"
 (input)="onUpdateServerName($event)"/>
 <p>{{someMessage}}</p>
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- ngFor Example servers is the list and server is an element of that list -->
+<app-server *ngFor="let server of servers"></app-server>
