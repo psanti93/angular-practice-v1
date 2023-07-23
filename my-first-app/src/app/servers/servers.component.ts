@@ -24,7 +24,7 @@ export class ServersComponent {
   onCreateServer() {
     this.serverCreated = true
     this.serverCreationStatus = 'Server was created! server name is ' + this.serverName;
-    this.servers.push(this.serverName)
+    this.servers.push(this.serverName) // will populate another <app-server></app-server> property
   }
 
   // Event Binding - one way
