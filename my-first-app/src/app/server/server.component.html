@@ -1,2 +1,9 @@
-string interpolation:
-<p>Server ID is {{serverId}} and is {{serverStatus}} and method is {{getServerStatus()}} </p>
+String Interpolation Example:
+<p [ngStyle]="{backgroundColor: getColor()}">Server ID is {{serverId}} and is {{serverStatus}} </p>
+<!-- ngSytle built in tag in angular-->
+
+<!-- ngClass directive example-->
+<p [ngStyle]="{backgroundColor: getColor()}"[ngClass]="{online: serverStatus ==='online'}">Server ID is {{serverId}} and is {{serverStatus}}</p>
+
+Calling a function string Interpolation example:
+<p>Server Status is {{getServerStatus()}}</p>
